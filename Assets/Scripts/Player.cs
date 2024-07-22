@@ -14,13 +14,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A))
         {
-            transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
+            if(transform.position.z > -1.5f)
+            {
+                transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
+            }
+            
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D))
         {
-            transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+            if (transform.position.z < 1.5f)
+            {
+                transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+            }
         }
 
     }
