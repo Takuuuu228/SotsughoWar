@@ -5,16 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float speed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             if(transform.position.z > -1.5f)
             {
@@ -22,7 +17,7 @@ public class Player : MonoBehaviour
             }
             
         }
-        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             if (transform.position.z < 1.5f)
             {

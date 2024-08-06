@@ -27,14 +27,13 @@ public class StreetController : MonoBehaviour
         if(streetPositionX > 20.0f)
         {
             StageGenerate();
+            StageEliminate();
         }
-
-        StageEliminate();
     }
 
     void StageGenerate()
     {
-        Obj = Instantiate(Streets[i], new Vector3(40.0f, 0, 0), Quaternion.identity);
+        Obj = Instantiate(Streets[i], new Vector3(100.0f, 0, 0), Quaternion.identity);
         Obj.transform.parent = this.gameObject.transform;
         streetPositionX = 0f;
         if(i < Streets.Length - 1)
@@ -45,6 +44,7 @@ public class StreetController : MonoBehaviour
         {
             i = 0;
         }
+
     }
 
     void StageEliminate()
