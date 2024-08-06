@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour
+public class ItemsSpawner : MonoBehaviour
 {
     public GameObject[] objectsToSpawn;  // 生成するオブジェクトのプレハブ
     public GameObject goalObject;        // ゴールオブジェクトのプレハブ
