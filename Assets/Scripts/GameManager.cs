@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int points;
     public int gauge;
-    public int hp;
-    public Text scoreText;
+    public float hp = 50;
+    public float maxHp = 100;
 
     // Start is called before the first frame update
     void Awake()
@@ -83,5 +83,13 @@ public class GameManager : MonoBehaviour
     {
         score += points;
         Debug.Log("Score:"+ score);
+    }
+    public void AddHP()
+    {
+        hp += 20;
+        if(hp >= maxHp)
+        {
+            hp = maxHp;
+        }
     }
 }

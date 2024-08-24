@@ -38,6 +38,10 @@ public class Item : MonoBehaviour
                 {
                     //GameManager.Instance.AddResearchPoint();
                 }
+                if (this.gameObject.CompareTag("Game"))
+                {
+                    GameManager.Instance.AddHP();
+                }
                     
                 Destroy(gameObject);
             }
