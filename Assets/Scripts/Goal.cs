@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
+    [SerializeField] float speed = 4.0f;
     // OnTriggerEnter is called when the Collider other enters the trigger
+    void Update()
+    {
+        transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,6 +23,7 @@ public class Goal : MonoBehaviour
                 {
                     gameManager.IncrementAcademicYear();
                     Debug.Log("学年更新: "+ gameManager.academicYear);
+
                 }
                 else
                 {

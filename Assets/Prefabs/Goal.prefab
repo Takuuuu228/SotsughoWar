@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7366254467211736141}
   - component: {fileID: 7366254467211736140}
   - component: {fileID: 7366254467211736139}
-  - component: {fileID: -1512716605121707595}
   - component: {fileID: 8864293959538129313}
   m_Layer: 0
   m_Name: Goal
@@ -29,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7366254467211736138}
   m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
-  m_LocalPosition: {x: 11.59, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 4}
+  m_LocalPosition: {x: 11.59, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 3, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,19 +96,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1512716605121707595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7366254467211736138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5fc8b1c3199abc4d9d2be493bdc495c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
 --- !u!114 &8864293959538129313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,3 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09952c35986282c409c150b85834fcb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 4

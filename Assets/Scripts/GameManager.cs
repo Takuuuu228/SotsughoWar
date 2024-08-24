@@ -2,15 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int academicYear = 1; // 初期値として1年生と仮定
+    private static GameManager instance;  // この行を保持します
 
-    private static GameManager instance;
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<GameManager>();
+                if (instance == null)
+                {
+                    Debug.LogError("GameManager instance not found!");
+                }
+            }
+            return instance;
+        }
+        private set
+        {
+            instance = value;
+        }
+    }
+    public int academicYear = 1; // 初期値として1年生と仮定
+    public int score = 0;
+    public int points;
+    public int gauge;
+    public int hp;
+    public Text scoreText;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // シングルトンパターンの設定
         if (instance == null)
@@ -22,18 +47,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    // 学年を1加算するメソッド
-    public void IncrementAcademicYear()
-    {
-        academicYear++;
     }
 
     public void LoadGameOver()
@@ -51,9 +64,24 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Title");
     }
 
+    // 学年を1加算するメソッド
+    public void IncrementAcademicYear()
+    {
+        academicYear++;
+    }
+
     // 学年を取得するメソッド
     public int GetAcademicYear()
     {
         return academicYear;
+    }
+    public int GetScore()
+    {
+        return score;
+    }
+    public void AddScore(int points)
+    {
+        score += points;
+        Debug.Log("Score:"+ score);
     }
 }
